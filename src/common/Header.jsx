@@ -4,6 +4,7 @@ import { Link, useLocation, useParams } from "react-router-dom"
 import { IoIosMenu } from "react-icons/io"
 import { IoReorderThreeOutline } from "react-icons/io5"
 import { RxCross1 } from "react-icons/rx"
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa6"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -82,27 +83,66 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="py-[15px]  shadow-2xl  ">
+        <div className="py-[15px]  shadow-2xl   ">
           <ul
             className={`  ${isOpen == false ? "left-[-500px]" : ""}
-                } flex flex-col sm:flex-row items-start fixed left-0 bg-white   w-[80%]  h-screen poppins-regular  text-[#32343b] duration-1000`}
+                } flex bg-[#7fffd4]   flex-col sm:flex-row items-center fixed left-0 bg-white   w-[90%]  h-screen poppins-regular  text-[#32343b] duration-300`}
           >
             {myLink.map((v, i) => {
               return (
-                <li className=" relative group py-[5px] text-[25px]">
-                  <Link to={v.to} className="hover:text-[#be8553] font-bold  ">
+                <li className=" relative group py-[5px] ps-3 text-[15px]  ">
+                  <Link to={v.to} className="hover:text-[#be8553] font-[500]  ">
                     {v.firstkey}
                   </Link>
                   <span className="w-[100%] left-[-10px] group-hover:bg-[#be8553] px-[30px]  absolute top-[140%] h-[2px] "></span>
                 </li>
               )
             })}
+            <div className="w-full border border-[solid] flex flex-col items-center ">
+              <p className="uppercase text-[blue]">connect</p>
+              <p>
+                <strong className="mr-1">Email:</strong>
+                <Link
+                  to={"#"}
+                  className=""
+                  target="_blank"
+                  href="mailto:marketing@ashapurna.com"
+                >
+                  marketing@ashapurna.com
+                </Link>
+              </p>
+              <p className="mb-1">
+                <strong className="mr-1">Phone:</strong>
+                <Link
+                  className="blue-color"
+                  target="_blank"
+                  href="tel:9314041747"
+                >
+                  9314041747
+                </Link>
+              </p>
+            </div>
+            <div className="w-full border border-[solid] flex flex-col items-center ">
+              <p className="capitalize text-[blue]">Social connect</p>
+              <div className="flex gap-6 py-[10px]">
+                <FaFacebook className="w-[20%] h-8" />
+                <FaTwitter className="w-[20%] h-8" />
+                <FaInstagram  className="w-[20%] h-8"/>
+                <FaLinkedin className="w-[20%] h-8" />
+                <FaYoutube  className="w-[20%] h-8"/>
+              </div>
+            </div>
           </ul>
         </div>
       </header>
 
-      <div class="fixed top-0 left-0 right-0">Contacts</div>
+      <div
+        className="fixed top-[50%] translate-x-[-50%] z-50 text-white  lg:right-[-80px] right-[-60px] bg-[#be8553]  rotate-90 px-[20px] py-[10px]
 
+"
+      >
+        <button className="uppercase">enquire</button>
+      </div>
     </>
   )
 }
