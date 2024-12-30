@@ -1,6 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 import { FeaturedProjectsSlider2 } from "../AllsliderData/slider"
+import { Link } from "react-router-dom"
 
 export default function FeaturedProjectsSlider() {
   return (
@@ -71,21 +72,13 @@ function Mysceondslider() {
               </div>
               <div>
                 <figure className="flex my-[20px] ">
-                  <img
-                    src={v.mininlogo}
-                    alt=""
-                    width={50}
-                    height={50}
-                  />
+                  <img src={v.mininlogo} alt="" width={50} height={50} />
                   <h1 className=" text-[30px] poppins-medium ms-5 text-[black] ">
-                    Ashapurna NRI
+                    {v.title}
                   </h1>
                 </figure>
                 <div className="text-[black] text-[14px] leading-7 pb-4">
-                  Ashapurna NRI is the 38th project of Ashapurna Buildcon Ltd.
-                  The project hosts classy Luxury Villas in Jodhpur that come in
-                  a package of European architecture villas in Jodhpur with
-                  5-star luxury amenities like club house full of activities...
+                  {v.description}
                 </div>
                 <div className="grid grid-cols-3">
                   <div className="flex items-center justify-center">
@@ -95,8 +88,12 @@ function Mysceondslider() {
                       className="pe-[10px] h-[50px]"
                     />
                     <div className=" poppins-semibold">
-                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">GYMNASIUM</h4>
-                      <span className="text-black lg:text-[15px] text-[10px]">ACTIVITIES</span>
+                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">
+                        GYMNASIUM
+                      </h4>
+                      <span className="text-black lg:text-[15px] text-[10px] font-[300]">
+                        {v.details.RERA}
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
@@ -106,26 +103,37 @@ function Mysceondslider() {
                       className="pe-[10px] h-[50px]"
                     />
                     <div className=" poppins-semibold">
-                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">GYMNASIUM</h4>
-                      <span className="text-black lg:text-[15px] text-[10px]">ACTIVITIES</span>
+                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">
+                        AREA
+                      </h4>
+                      <span className="text-black lg:text-[15px] text-[8px] font-[300]">
+                        {v.details.Area}
+                      </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
                     <img
                       src={v.svgImge}
                       alt="testing"
-                      className="lg:pe-[10px] pe-[5px] h-[50px]"
+                      className="pe-[10px] h-[50px]"
                     />
                     <div className=" poppins-semibold">
-                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">GYMNASIUM</h4>
-                      <span className="text-black lg:text-[15px] text-[10px]">ACTIVITIES</span>
+                      <h4 className="text-[#be8553] mb-[5px] lg:text-[15px] text-[10px] ">
+                      AVAILABILITY
+                      </h4>
+                      <span className="text-black lg:text-[15px] text-[8px] font-[300]">
+                        {v.details.Availability}
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <button className="bg-[#be8553] lg:py-[10px] py-[5px] lg:px-[15px] px-[7px] lg:text-[20px] text-[15px] text-white flex items-center justify-center mx-auto my-[20px]">
+              <Link to={`/residentia/${v.slug}`}>
+              
               See All
+              </Link>
             </button>
           </div>
         )

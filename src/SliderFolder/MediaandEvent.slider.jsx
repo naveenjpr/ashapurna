@@ -1,8 +1,14 @@
 import React from "react"
 import Slider from "react-slick"
 import { MediaandEventSlider2 } from "../AllsliderData/slider"
+import { useNavigate } from "react-router"
 
 export default function MediaandEventSlider() {
+  const navigate = useNavigate()
+  console.log(navigate)
+  let handleClick = () => {
+    navigate("/Media-and-Event")
+  }
   var settings = {
     dots: true,
     infinite: false,
@@ -39,15 +45,15 @@ export default function MediaandEventSlider() {
   }
   return (
     <>
-      <div
-        className="max-w-[1140px] mx-auto  my-[40px]"
-        id="mediaSlider"
-      >
+      <div className="max-w-[1140px] mx-auto  my-[40px]" id="mediaSlider">
         <div className="flex justify-between py-[15px]">
           <h1 className="font-[600] lg:text-[35px] text-[17px] text-[#062f43] capitalize">
             Media and Event
           </h1>
-          <button className="font-[500] lg:text-[20px] text-[10px] bg-[#32343b] capitalize rounded-[4px] text-white lg:px-[30px] px-[15px] lg:py-[8px] py-[4px]">
+          <button
+            onClick={handleClick}
+            className="font-[500] lg:text-[20px] text-[10px] bg-[#32343b] capitalize rounded-[4px] text-white lg:px-[30px] px-[15px] lg:py-[8px] py-[4px]"
+          >
             See All
           </button>
         </div>

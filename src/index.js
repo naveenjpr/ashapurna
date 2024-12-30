@@ -17,6 +17,8 @@ import MediaandEvent from "./pages/MediaandEvent"
 import Projects from "./pages/Projects"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import AshapurnaEvents from "./pages/Ashapurna.Events"
+import Residentia from "./SliderFolder/Residentia"
 
 const router = createBrowserRouter([
   {
@@ -40,8 +42,16 @@ const router = createBrowserRouter([
     element: <Projects />,
   },
   {
-    path: "MediaandEvent",
+    path: "Media-and-Event",
     element: <MediaandEvent />,
+  },
+  {
+    path: "Media-and-Event/:id",
+    element: <AshapurnaEvents />,
+  },
+  {
+    path: "residentia/:id",
+    element: <Residentia />,
   },
 ])
 

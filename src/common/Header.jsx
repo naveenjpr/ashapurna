@@ -18,7 +18,7 @@ export default function Header() {
     { firstkey: "Home", to: "/" },
     { firstkey: " About us", to: "/about" },
     { firstkey: "Project", to: "/Project" },
-    { firstkey: "Media and Event", to: "/MediaandEvent" },
+    { firstkey: "Media and Event", to: "/Media-and-Event" },
     { firstkey: "Blogs", to: "/blog" },
     { firstkey: "Contact Us", to: "/contacr-us" },
     {
