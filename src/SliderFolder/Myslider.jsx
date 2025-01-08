@@ -15,17 +15,17 @@ export default function Myslider() {
     <>
       <div className="max-w-[1150px] mx-auto sm:mb-[100px]" id="firstslider">
         <Slider {...settings}>
-          {
-            HomeFirstSliderHeader.map((v,i)=>{
-              return(
-                <div>
-                <img src={v.imgUrl} alt="" className="h-screen w-full " />
+          {HomeFirstSliderHeader.map((v, i) => {
+            return (
+              <div>
+                <img
+                  src={v.imgUrl}
+                  alt=""
+                  className="md:h-screen h-[81vh] w-full "
+                />
               </div>
-              )
-            })
-          }
-       
-          
+            )
+          })}
         </Slider>
         <div className="grid sm:grid-cols-6 grid-cols-2 gap-[10px] justify-between border p-[10px] border-b-4 border-b-[#be8553]">
           <div className="">

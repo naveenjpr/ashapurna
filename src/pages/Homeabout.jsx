@@ -127,24 +127,26 @@ export default function Homeabout() {
             </div>
           </div>
 
-          <div className="w-[100%] h-[200px]  bg-[red]  sm:hidden block ">
+          <div className="w-full h-[200px]  sm:hidden block ">
             <div className="">
               <Slider {...settings5}>
                 {Mycounter.map((v, i) => {
                   return (
-                    <div>
-                      <div className=" flex flex-col	items-center ">
-                        <div className="w-[80px] flex justify-center items-center h-[80px] bg-white mx-auto">
+                    <div key={i}>
+                      <div className="flex flex-col items-center">
+                        <div className="w-[80px] bg-[#f4efeb] h-[80px] flex justify-center items-center  mx-auto rounded-full">
                           <img
                             src={v.imgage}
                             alt=""
-                            className="mx- h-[50px] w-[50px] bg-[red]"
+                            className="h-[50px] w-[50px] object-cover rounded-full"
                           />
                         </div>
-                        <h1 className="text-bold mb-[10px] text-[25px] poppins-bold">
+                        <h1 className="text-bold mb-2 text-[20px] sm:text-[18px] md:text-[22px] font-bold">
                           {v.numberplus}
                         </h1>
-                        <p className="text-[#5a5a5a]">{v.yearofexperican}</p>
+                        <p className="text-[#5a5a5a] text-center text-sm md:text-base">
+                          {v.yearofexperican}
+                        </p>{" "}
                       </div>
                     </div>
                   )
