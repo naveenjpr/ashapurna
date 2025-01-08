@@ -66,75 +66,80 @@ export default function Header() {
         </div>
       </header>
 
-      <header className="w-[95%] shadow-2xl bg-white shadow-[black]   sm:hidden block fixed z-[99999999999] top-0 left-0  ">
-        <div className="max-w-[1170px]   mx-auto items-center flex justify-between">
-          <div className="flex justify-between w-[100%] relative">
-            <img src={logo} width={100} height={100} alt="" className="" />
-            <button
-              className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
-              onClick={toggleNavbar}
-            >
-              {isOpen == false ? (
-                <IoReorderThreeOutline className="text-[50px] text-black" />
-              ) : (
-                <RxCross1 className="text-[50px] text-black" />
-              )}
-            </button>
-          </div>
-        </div>
+      <header className="w-full shadow-2xl bg-white fixed z-[9999999] top-0 left-0 sm:hidden block">
+  {/* Top Navigation Bar */}
+  <div className="max-w-[1170px] mx-auto flex items-center justify-between px-4 py-2">
+    <div className="flex justify-between w-full items-center">
+      <img src={logo} width={80} height={80} alt="Logo" />
+      <button
+        className="text-black focus:outline-none"
+        onClick={toggleNavbar}
+      >
+        {isOpen ? (
+          <RxCross1 className="text-[40px]" />
+        ) : (
+          <IoReorderThreeOutline className="text-[40px]" />
+        )}
+      </button>
+    </div>
+  </div>
 
-        <div className="py-[15px]  shadow-2xl   ">
-          <ul
-            className={`  ${isOpen == false ? "left-[-500px]" : ""}
-                } flex bg-[#7fffd4]   flex-col sm:flex-row items-center fixed left-0 bg-white   w-[90%]  h-screen poppins-regular  text-[#32343b] duration-300`}
+  {/* Mobile Sidebar Menu */}
+  <div
+    className={`fixed top-0 left-0 h-screen w-[85%] bg-white shadow-lg transform ${
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    } transition-transform duration-300`}
+  >
+    <ul className="flex flex-col max-h-[200px] mt-20 space-y-0 px-6 poppins-regular text-[#32343b]">
+      {myLink.map((v, i) => (
+        <li key={i} className="group py-1 text-[15px]">
+          <Link
+            to={v.to}
+            className="hover:text-[#be8553] font-medium"
           >
-            {myLink.map((v, i) => {
-              return (
-                <li className=" relative group py-[5px] ps-3 text-[15px]  ">
-                  <Link to={v.to} className="hover:text-[#be8553] font-[500]  ">
-                    {v.firstkey}
-                  </Link>
-                  <span className="w-[100%] left-[-10px] group-hover:bg-[#be8553] px-[30px]  absolute top-[140%] h-[2px] "></span>
-                </li>
-              )
-            })}
-            <div className="w-full border border-[solid] flex flex-col items-center ">
-              <p className="uppercase text-[blue]">connect</p>
-              <p>
-                <strong className="mr-1">Email:</strong>
-                <Link
-                  to={"#"}
-                  className=""
-                  target="_blank"
-                  href="mailto:marketing@ashapurna.com"
-                >
-                  marketing@ashapurna.com
-                </Link>
-              </p>
-              <p className="mb-1">
-                <strong className="mr-1">Phone:</strong>
-                <Link
-                  className="blue-color"
-                  target="_blank"
-                  href="tel:9314041747"
-                >
-                  9314041747
-                </Link>
-              </p>
-            </div>
-            <div className="w-full border border-[solid] flex flex-col items-center ">
-              <p className="capitalize text-[blue]">Social connect</p>
-              <div className="flex gap-6 py-[10px]">
-                <FaFacebook className="w-[20%] h-8" />
-                <FaTwitter className="w-[20%] h-8" />
-                <FaInstagram  className="w-[20%] h-8"/>
-                <FaLinkedin className="w-[20%] h-8" />
-                <FaYoutube  className="w-[20%] h-8"/>
-              </div>
-            </div>
-          </ul>
-        </div>
-      </header>
+            {v.firstkey}
+          </Link>
+          <span className="w-full h-[2px] bg-[#be8553] group-hover:block hidden"></span>
+        </li>
+      ))}
+    </ul>
+
+    {/* Contact Section */}
+    <div className="border-t border-gray-300 mt-8 pt-4 px-6">
+      <p className="uppercase text-blue-500 font-semibold mb-2">Connect</p>
+      <p>
+        <strong>Email:</strong>{" "}
+        <a
+          href="mailto:marketing@ashapurna.com"
+          className="text-blue-500 hover:underline"
+        >
+          marketing@ashapurna.com
+        </a>
+      </p>
+      <p className="mt-2">
+        <strong>Phone:</strong>{" "}
+        <a
+          href="tel:9314041747"
+          className="text-blue-500 hover:underline"
+        >
+          9314041747
+        </a>
+      </p>
+    </div>
+
+    {/* Social Connect Section */}
+    <div className="border-t border-gray-300 mt-8 pt-4 px-6">
+      <p className="capitalize text-blue-500 font-semibold mb-4">Social Connect</p>
+      <div className="flex justify-between items-center gap-4">
+        <FaFacebook className="text-[#4267B2] w-6 h-6" />
+        <FaTwitter className="text-[#1DA1F2] w-6 h-6" />
+        <FaInstagram className="text-[#E4405F] w-6 h-6" />
+        <FaLinkedin className="text-[#0077B5] w-6 h-6" />
+        <FaYoutube className="text-[#FF0000] w-6 h-6" />
+      </div>
+    </div>
+  </div>
+</header>
 
       <div
         className="fixed top-[50%] translate-x-[-50%] z-50 text-white  lg:right-[-80px] right-[-60px] bg-[#be8553]  rotate-90 px-[20px] py-[10px]

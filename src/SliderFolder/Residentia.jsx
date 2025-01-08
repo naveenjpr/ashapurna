@@ -7,6 +7,7 @@ import { FaArrowDown } from "react-icons/fa6"
 import { amenities, data } from "../AllsliderData/slider"
 export default function Residentia() {
   let useparsm = useParams()
+  console.log(useparsm.id)
   let leturl = useparsm.id
   const [isopen, setisopen] = useState(false)
 
@@ -20,39 +21,40 @@ export default function Residentia() {
         <img
           src="https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/slider/mb_web_banner__04-1732967971.jpg"
           alt=""
+          className="h-screen w-full"
         />
-        <div className="grid grid-cols-[60%_auto] justify-between mt-[10px] items-center border-b-8 border-b-[#be8553] rounded-[4px]">
-          <div className="flex items-center border-[2px] border-[solid]">
+        <div className="grid grid-cols-1 md:grid-cols-[60%_auto] justify-between gap-4 mt-4 items-center border-b-8 border-b-[#be8553] rounded-[4px] p-4">
+          <div className="flex flex-col md:flex-row items-center border-[2px] border-[solid]">
             <img
               src="https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/mb_logo_a-1699176365.jpg"
-              className="w-[200px] h-[200px] mx-[15px]"
+              className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] mx-auto md:mx-[15px]"
               alt=""
             />
             <img
               src="https://ashapurna.com/images/icons/vertical-line.svg"
-              className="mx-[15px]"
+              className="hidden md:block mx-[15px]"
               alt=""
             />
-            <div className="">
-              <h1 className="text-[#212529] font-bold text-[25px] py-2">
+            <div className="text-center md:text-left mt-4 md:mt-0">
+              <h1 className="text-[#212529] font-bold text-lg md:text-2xl py-2">
                 Ashapurna Mohan Bagh
               </h1>
-              <p className=" font-[300] py-2">
+              <p className="font-[300] py-2 text-sm md:text-base">
                 Near ITC Hotel, Uchiyarda, Jodhpur, Rajasthan
               </p>
-              <div className="flex ">
-                <button className="border-[1px] p-1 border-[solid] border-[#be8553] flex items-center text-[#be8553] rounded-[3px] ">
+              <div className="flex flex-col md:flex-row gap-2 mt-2">
+                <button className="border-[1px] p-2 border-[solid] border-[#be8553] flex items-center text-[#be8553] rounded-[3px] text-sm">
                   <a
-                    target="blank"
+                    target="_blank"
                     href="https://maps.app.goo.gl/k2jaxVaGAsEzaqh18"
-                    className=" flex items-center gap-2"
+                    className="flex items-center gap-2"
                   >
                     <svg
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fas"
                       data-icon="map-marker-alt"
-                      className="w-[10px] h-3"
+                      className="w-4 h-4"
                       role="img"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 384 512"
@@ -61,21 +63,24 @@ export default function Residentia() {
                         fill="currentColor"
                         d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
                       ></path>
-                    </svg>{" "}
+                    </svg>
                     <span>Get Directions</span>
                   </a>
                 </button>
-                <button className="bg-[#062f43] text-[white] font-bold p-1 rounded ml-1">
+                <button className="bg-[#062f43] text-white font-bold py-2 px-4 rounded">
                   33.5 Lakh*
                 </button>
               </div>
             </div>
           </div>
-          <div className="flex text-[#c08958] hover:text-white font-bold ">
-            <button className=" mx-4 hover:bg-[#c08958]  " onClick={popupopen}>
+          <div className="flex flex-col md:flex-row text-[#c08958] hover:text-white font-bold gap-4 md:gap-6">
+            <button
+              className="hover:bg-[#c08958] p-2 rounded"
+              onClick={popupopen}
+            >
               <Link
                 to="#"
-                className="flex ms-3 justify-between items-center border-[1px] border-[solid] border-[#c08958] rounded-[3px] font-[300] p-2"
+                className="flex justify-between items-center border-[1px] border-[solid] border-[#c08958] rounded-[3px] font-[300] p-2"
               >
                 <span className="px-[6px]">
                   <FaArrowDown />
@@ -83,14 +88,9 @@ export default function Residentia() {
                 <span>Brochure</span>
               </Link>
             </button>
-            <button className="mx-4 bg-[#32343b] text-[white] flex px-[10px] py-[6px] rounded-[4px] items-center">
-              <span>
-                <CiPhone className="text-[white" />
-              </span>
-
-              <span>
-                <a href="tel:8619916687">8619916687</a>
-              </span>
+            <button className="bg-[#32343b] text-white flex px-4 py-2 rounded-[4px] items-center">
+              <CiPhone className="text-white mr-2" />
+              <a href="tel:8619916687">8619916687</a>
             </button>
           </div>
         </div>
@@ -165,6 +165,30 @@ export default function Residentia() {
         ""
       )}
       <ResidentiaCommon />
+      <section className="w-[100%] bg-[#32343b] mt-[70px]">
+        <div className="max-w-[90%] mx-auto grid grid-cols-[55%_auto] py-[50px] gap-10">
+          <div className="">
+            <h2 className="text-[35px] text-[#be8553] font-bold">
+              Master Plan
+            </h2>
+            <div className="w-[130px] my-[20px] h-1 bg-[#b58051]"></div>
+            <p className="text-[white] leading-[28px] font-[400] text-[18px] text-justify">
+              Depending on the present and future needs of the residents of the
+              Township, the master plan defines how much area will be allocated
+              to different types of asset classes. The land uses mentioned in
+              the Key-plan are further divided into subcategories, creating a
+              long list of land-use types needed for the seamless development
+              and functioning of a township.
+            </p>
+          </div>
+          <div className="">
+            <img
+              src="https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/master_plan/MohanBagh_site_layout-1723281812.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
     </>
   )
 }
@@ -253,43 +277,44 @@ export function ResidentiaCommon() {
       )}
       {/* Amenities_popup start */}
       {Amenitiespopup ? (
-        <div className="fixed w-[90%] h-[90%] border-[1px] border-[solid] border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px]">
-          <div className="grid grid-cols-1 justify-between gap-10">
+        <div className="fixed w-[90%] h-[90%] border border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px] p-4 overflow-auto">
+          <div className="grid grid-cols-1 gap-6">
             <div>
-              <h2 className="text-[black] py-[10px] text-[25px] font-[bold]">
-                Amenities{" "}
+              <h2 className="text-[black] py-[10px] text-[20px] md:text-[25px] font-bold">
+                Amenities
               </h2>
 
-              <div className="grid grid-cols-6 gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
                 {amenities.map((v, i) => {
                   return (
-                    <>
-                      <div className="flex flex-col items-center justify-center">
-                        <figcaption className="">
-                          <img
-                            src={v.icon}
-                            alt=""
-                            className="w-[50px] h-[50px]"
-                          />
-                        </figcaption>
-                        <article className="px-[10px]">
-                          <h5 className="text-[#c08958] font-[bold] text-center">
-                            {v.title}
-                          </h5>
-                          <p className="text-center">{v.subtitle}</p>
-                        </article>
-                      </div>
-                    </>
+                    <div
+                      key={i}
+                      className="flex flex-col items-center justify-center text-center"
+                    >
+                      <figcaption>
+                        <img
+                          src={v.icon}
+                          alt=""
+                          className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]"
+                        />
+                      </figcaption>
+                      <article className="mt-2">
+                        <h5 className="text-[#c08958] font-bold text-sm md:text-base">
+                          {v.title}
+                        </h5>
+                        <p className="text-xs md:text-sm">{v.subtitle}</p>
+                      </article>
+                    </div>
                   )
                 })}
               </div>
             </div>
           </div>
           <span
-            className="absolute top-[-25px] right-[0px] text-black text-[45px] cursor-pointer hover:text-[red]"
+            className="absolute top-2 right-2 text-black text-[30px] md:text-[45px] cursor-pointer hover:text-[red]"
             onClick={() => setAmenitiespopup(false)}
           >
-            x
+            &times;
           </span>
         </div>
       ) : (
@@ -297,19 +322,23 @@ export function ResidentiaCommon() {
       )}
 
       {/* Amenities_popup End */}
-      <main className="max-w-[1170px] mx-auto border-[2px_solid_red] mt-12">
-        <section className="grid grid-cols-[65%_auto] h-28">
-          <div>
-            <h2 className="font-[600] text-[black] text-[35px]">
+      <main className="max-w-[1170px] mx-auto  mt-12">
+        <section className="grid md:grid-cols-[65%_auto] grid-cols-1 gap-[40px]">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <h2 className="font-semibold text-black text-[28px] sm:text-[35px] text-center">
               Project Overview
             </h2>
-            <span className="border-b-2 border-[#be8554] w-[110px] block"></span>
-            <h3 className="py-[10px] text-[#5c5c5c]">
-              <b className="text-[30px] font-[500] ">
+            <span className="border-b-2 border-[#be8554] w-[80px] sm:w-[110px] block mx-auto mt-2"></span>
+
+            {/* Subheading */}
+            <h3 className="py-4 text-[#5c5c5c] text-center">
+              <b className="text-[22px] sm:text-[30px] font-medium block">
                 2 BHK Villas in Jodhpur | 3 BHK Villas in Jodhpur
               </b>
             </h3>
-            <p className="font-[400] text-[15px] text-[#888888]">
+
+            {/* Paragraph */}
+            <p className="font-normal text-[14px] sm:text-[15px] text-[#888888] leading-relaxed text-justify">
               Ashapurna Buildcon picked the Spanish theme for MohanBagh to
               provide its residents with a unique and lavish living experience.
               Mohan Bagh features a collection of exquisitely designed 2 & 3 BHK
@@ -320,30 +349,30 @@ export function ResidentiaCommon() {
               architecture is renowned for its grandeur, intricate details, and
               timeless beauty. By incorporating these elements into the design
               of the township, Ashapurna Buildcon aims to create a sense of
-              ultra-luxury and exclusivity. Additionally, Spain is known for its
-              passion for art, music, and outdoor activities. Mohan Bagh is
-              filled with a variety of amenities, which draws inspiration from
-              the vibrant Spanish lifestyle, providing residents with a range of
-              recreational and leisure options. The Spanish theme adds a touch
-              of sophistication and cultural richness to Mohan Bagh, making it
-              an ideal choice for those seeking a luxurious and indulgent living
-              experience.
+              ultra-luxury and exclusivity.
+              <br />
+              <br />
+              Additionally, Spain is known for its passion for art, music, and
+              outdoor activities. Mohan Bagh is filled with a variety of
+              amenities, which draw inspiration from the vibrant Spanish
+              lifestyle, providing residents with a range of recreational and
+              leisure options. The Spanish theme adds a touch of sophistication
+              and cultural richness to Mohan Bagh, making it an ideal choice for
+              those seeking a luxurious and indulgent living experience.
             </p>
-            <section className="w-[100%] grid grid-cols-[75%_auto] items-center my-[10px]">
+            <section className="w-full grid grid-cols-1 md:grid-cols-[75%_auto] items-center gap-4 my-4">
               <div>
-                <h3 className="text-[30px] font-[500]">Amenities</h3>
-                <span className="border-b-2 border-[#be8554] w-[100px] mt-[2px] block"></span>
+                <h3 className="text-lg md:text-2xl font-semibold">Amenities</h3>
+                <span className="border-b-2 border-[#be8554] w-[100px] mt-2 block"></span>
               </div>
-              <button className=" mx-4 bg-[#c08958]  " onClick={popupopen}>
-                <Link
-                  to="#"
-                  className="flex ms-3 text-white  items-center border-[1px] border-[solid] border-[#c08958] rounded-[3px] font-[300] p-2"
-                >
-                  <span className="px-[6px] ">
-                    <FaArrowDown />
-                  </span>
-                  <span>E-Brochure</span>
-                </Link>
+              <button
+                className="w-full text-[white]  md:w-auto mx-auto md:mx-4 bg-[#c08958] py-2 px-4 rounded-lg flex justify-center items-center"
+                onClick={popupopen}
+              >
+                <span className="px-2">
+                  <FaArrowDown />
+                </span>
+                <span>E-Brochure</span>
               </button>
             </section>
             <aside className="grid grid-cols-3 gap-6">
@@ -359,10 +388,12 @@ export function ResidentiaCommon() {
                         />
                       </figcaption>
                       <article className="px-[10px]">
-                        <h5 className="text-[#c08958] font-[bold]">
+                        <h5 className="text-[#c08958] font-[bold]  md:text-[15px]     text-[10px]">
                           {v.title}
                         </h5>
-                        <p>{v.subtitle}</p>
+                        <p className="md:text-[15px] text-[10px]">
+                          {v.subtitle}
+                        </p>
                       </article>
                     </div>
                   </>
@@ -379,7 +410,83 @@ export function ResidentiaCommon() {
               </button>
             </aside>
           </div>
-          <div>2</div>
+          <div className="w-full max-h-[450px] max-w-md mx-auto  bg-white p-6 rounded-lg shadow-lg border-b-[6px] border-b-[solid] border-b-[red]">
+            <h2 className="text-lg font-semibold text-[#D17A45]">
+              Get in Touch
+            </h2>
+            <div className="w-16 h-1 bg-[#D17A45] mt-1 mb-6"></div>
+            <form onSubmit className="space-y-4">
+              {/* Name Input */}
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  // value={form.name}
+                  // onChange={handleChange}
+                  className="w-full border rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#D17A45] focus:outline-none"
+                />
+                {/* {errors.name && (
+                  <p className="text-sm text-red-500 mt-1">{errors.name}</p>
+                )} */}
+              </div>
+
+              {/* Phone Input */}
+              <div>
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Mobile number"
+                  // value={form.phone}
+                  // onChange={handleChange}
+                  className="w-full border rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#D17A45] focus:outline-none"
+                />
+                {/* {errors.phone && (
+                  <p className="text-sm text-red-500 mt-1">{errors.phone}</p>
+                )} */}
+              </div>
+
+              {/* Email Input */}
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  // value={form.email}
+                  // onChange={handleChange}
+                  className="w-full border rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#D17A45] focus:outline-none"
+                />
+                {/* {errors.email && (
+                  <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+                )} */}
+              </div>
+
+              {/* Message Input */}
+              <div>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  // value={form.message}
+                  // onChange={handleChange}
+                  rows="4"
+                  className="w-full border rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-[#D17A45] focus:outline-none"
+                ></textarea>
+                {/* {errors.message && (
+                  <p className="text-sm text-red-500 mt-1">{errors.message}</p>
+                )} */}
+              </div>
+
+              {/* Submit Button */}
+              <div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#D17A45] text-white py-2 rounded-lg text-sm font-semibold hover:bg-[#b56938] transition duration-300"
+                >
+                  Enquire Now
+                </button>
+              </div>
+            </form>
+          </div>
         </section>
       </main>
     </>
