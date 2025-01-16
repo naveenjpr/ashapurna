@@ -97,7 +97,7 @@ export default function Residentia() {
       </section>
       {isopen == true ? (
         <div className="fixed w-[78%] h-[78%] border-[1px] border-[solid] border-[grey] z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px]">
-          <div className="grid grid-cols-2 justify-between gap-10">
+          <div className="grid md:grid-cols-2 grid-cols-1 justify-between gap-10">
             <div>
               <img
                 src="https://ashapurna.com/images/sections/modal-bg.jpg"
@@ -189,6 +189,7 @@ export default function Residentia() {
           </div>
         </div>
       </section>
+      <FloorPlan />
     </>
   )
 }
@@ -489,6 +490,99 @@ export function ResidentiaCommon() {
           </div>
         </section>
       </main>
+    </>
+  )
+}
+
+export function FloorPlan() {
+  const [activTab, setactivTab] = useState(0)
+  console.log(activTab)
+  let tabs = [
+    "LA CASTLE (30X60)",
+    "LA GRAND MANSION (25X50)",
+    "LA MENOR MANSION (25X45)",
+    "LA GRAND CASA (20X45)",
+    "LA MENOR CASA (20X40)",
+  ]
+  let tabscontent = [
+    {
+      firstImg:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_30x60-1700303299.jpg",
+      heading: "LA CASTLE (30X60)",
+    },
+    {
+      firstImg:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_25x50-1700303299.jpg",
+      heading: "LA GRAND MANSION (25X50)",
+    },
+    {
+      firstImg:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_25x45-1700303300.jpg",
+      heading: "LA MENOR MANSION (25X45)",
+    },
+    {
+      firstImg:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_20x45-1700303300.jpg",
+      heading: "LA GRAND CASA (20X45)",
+    },
+    {
+      firstImg:
+        "https://ashapurna.com/images/projects-banners/heritage/852-780.jpg",
+      heading: "LA MENOR CASA (20X40)",
+    },
+  ]
+  return (
+    <>
+      <section className="bg-[#f4efeb]">
+        <h1 className="text-center font-bold text-[35px] py-[15px]">
+          Floor Plan
+        </h1>
+        <div className="max-w-[90%] mx-auto py-8">
+          <div className="flex flex-wrap justify-between items-center mb-[50px] space-y-2 sm:space-y-0 sm:flex-row">
+            {tabs.map((v, i) => {
+              return (
+                <button
+                  className={`border border-[solid] border-[#ca9d75] py-[15px] px-[7px] rounded-[6px] ${
+                    activTab === i ? "text-[#ca9d75]" : ""
+                  }`}
+                  key={i}
+                  onClick={() => setactivTab(i)}
+                >
+                  {v}
+                </button>
+              )
+            })}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-[70%_auto] mt-6 gap-6 sm:gap-8">
+            {tabscontent.map((img, index) => (
+              <div
+                key={index}
+                style={{ display: activTab === index ? "block" : "none" }}
+              >
+                <img
+                  src={img.firstImg}
+                  alt={`Floor plan ${tabs[index]}`}
+                  className="w-full max-h-[400px] object-cover"
+                />
+              </div>
+            ))}
+            <div>
+              {tabscontent.map((hea, ind) => {
+                return (
+                  <div
+                    key={ind}
+                    style={{ display: activTab === ind ? "block" : "none" }}
+                  >
+                    <h1 className="font-bold text-[20px] text-center">
+                      {hea.heading}
+                    </h1>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
