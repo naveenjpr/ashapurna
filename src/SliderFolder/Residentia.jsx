@@ -218,7 +218,7 @@ export function ResidentiaCommon() {
   return (
     <>
       {isopen == true ? (
-        <div className="fixed w-[90%] md:w-[78%] h-auto md:h-[78%] border-[1px] border-[solid] border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px] p-4">
+        <div className="fixed w-[90%] md:w-[78%] max-h-screen md:h-[78%] overflow-scroll border-[1px] border-[solid] border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px] p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Image Section */}
             <div>
