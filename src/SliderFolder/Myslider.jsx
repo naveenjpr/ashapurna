@@ -1,54 +1,55 @@
 import React from "react"
-
 import Slider from "react-slick"
 import { HomeFirstSliderHeader } from "../AllsliderData/slider"
 
 export default function Myslider() {
   var settings = {
-    dots: false,
+    dots: true, // Enabled dots for easier navigation
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+
   return (
     <>
-      <div className="max-w-[1150px] mx-auto sm:mb-[100px]" id="firstslider">
+      <div
+        className="max-w-[1150px] mx-auto sm:mb-[100px] px-4"
+        id="firstslider"
+      >
         <Slider {...settings}>
-          {HomeFirstSliderHeader.map((v, i) => {
-            return (
-              <div>
-                <img
-                  src={v.imgUrl}
-                  alt=""
-                  className="md:h-screen h-[81vh] w-full "
-                />
-              </div>
-            )
-          })}
+          {HomeFirstSliderHeader.map((v, i) => (
+            <div key={i}>
+              <img
+                src={v.imgUrl}
+                alt=""
+                className="h-auto md:h-screen w-full "
+              />
+            </div>
+          ))}
         </Slider>
-        <div className="grid sm:grid-cols-6 grid-cols-2 gap-[10px] justify-between border p-[10px] border-b-4 border-b-[#be8553]">
-          <div className="">
+        <div className="grid sm:grid-cols-6 grid-cols-1 gap-4 sm:gap-[10px] border p-[10px] border-b-4 border-b-[#be8553] mt-6">
+          <div>
             <input
               placeholder="NAME"
               type="text"
-              className="h-[65px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-[165px]"
+              className="h-[50px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-full sm:w-[165px]"
             />
           </div>
 
           <input
             placeholder="Email"
             type="email"
-            className="h-[65px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-[165px]"
+            className="h-[50px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-full sm:w-[165px]"
           />
 
           <input
             placeholder="Phone"
             type="number"
-            className="h-[65px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-[165px]"
+            className="h-[50px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-full sm:w-[165px]"
           />
 
-          <select className="  text-black h-[65px] w-[165px] border border-[#c7c7c7] ">
+          <select className="text-black h-[50px] w-full sm:w-[165px] border border-[#c7c7c7]">
             <option>Select Property</option>
             <option value="50">Ashapurna Valley Orchard</option>
             <option value="48">Ashapurna Mohan Bagh</option>
@@ -93,10 +94,10 @@ export default function Myslider() {
           <input
             type="text"
             placeholder="Explain Your Query"
-            className="h-[65px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-[165px]"
+            className="h-[50px] text-black py-2 px-2 placeholder-black placeholder:font-bold border border-[#c7c7c7] w-full sm:w-[165px]"
           />
 
-          <button className="text-white bg-[#be8553] border border-[#c7c7c7] w-[140px]">
+          <button className="text-white bg-[#be8553] border border-[#c7c7c7] w-full sm:w-[140px] h-[50px]">
             Submit
           </button>
         </div>

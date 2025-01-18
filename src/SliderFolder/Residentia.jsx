@@ -21,7 +21,7 @@ export default function Residentia() {
         <img
           src="https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/slider/mb_web_banner__04-1732967971.jpg"
           alt=""
-          className="h-screen w-full"
+          className="w-full h-auto max-h-screen object-cover"
         />
         <div className="grid grid-cols-1 md:grid-cols-[60%_auto] justify-between gap-4 mt-4 items-center border-b-8 border-b-[#be8553] rounded-[4px] p-4">
           <div className="flex flex-col md:flex-row items-center border-[2px] border-[solid]">
@@ -96,69 +96,79 @@ export default function Residentia() {
         </div>
       </section>
       {isopen == true ? (
-        <div className="fixed w-[78%] h-[78%] border-[1px] border-[solid] border-[grey] z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px]">
-          <div className="grid md:grid-cols-2 grid-cols-1 justify-between gap-10">
+        <div className="fixed w-[90%] md:w-[78%] h-auto md:h-[78%] border-[1px] border-[solid] border-[grey] z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px] p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-4">
+            {/* Image Section */}
             <div>
               <img
                 src="https://ashapurna.com/images/sections/modal-bg.jpg"
-                className="h-full max-w-full object-cover	"
+                className="w-full h-auto max-h-[300px] md:max-h-full object-cover rounded-[4px]"
                 alt=""
               />
             </div>
 
+            {/* Form Section */}
             <div>
-              <h2 className="text-[black] py-[10px] text-[25px] font-light">
+              <h2 className="text-black py-2 text-lg md:text-[25px] font-light">
                 Download Brochure
               </h2>
-              <p>
+              <p className="text-sm md:text-base mb-4">
                 Feel free to connect with us. We will contact with you shortly.
               </p>
-              <form>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] mb-[15px]"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] mb-[15px]"
-                />
+              <form className="space-y-4">
+                {/* Name and Email Inputs */}
+                <div className="flex flex-col md:flex-row gap-2">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="border-[1px] border-[solid] border-black rounded-[4px] w-full md:w-[48%] h-[50px] px-2"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="border-[1px] border-[solid] border-black rounded-[4px] w-full md:w-[48%] h-[50px] px-2"
+                  />
+                </div>
+                {/* Phone Input */}
                 <input
                   type="tel"
                   placeholder="Phone"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px]"
+                  className="border-[1px] border-[solid] border-black rounded-[4px] w-full h-[50px] px-2"
                 />
-                <div className=" border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] relative mb-5 inline-block">
-                  <select name="enqProperty" required="">
+                {/* Select Dropdown */}
+                <div className="border-[1px] border-[solid] border-black rounded-[4px] w-full h-[50px] px-2 relative">
+                  <select
+                    name="enqProperty"
+                    required=""
+                    className="w-full h-full bg-transparent"
+                  >
                     <option value="Ashapurna Mohan Bagh">
-                      Ashapurna Mohan Bagh
+                      {/* Ashapurna Mohan Bagh */}
                     </option>
                   </select>
-                  <label className=" flex items-center gap-2absolute top-[-20px] left-0">
-                    {" "}
-                    Select Property
-                  </label>
                 </div>
+                {/* Textarea */}
                 <textarea
                   name=""
                   placeholder="Explain your query"
                   id=""
                   cols="30"
                   rows="5"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[98%] mx-1"
+                  className="border-[1px] border-[solid] border-black rounded-[4px] w-full h-auto px-2"
                 ></textarea>
               </form>
-              <button className=" text-center flex justify-center my-3 mx-auto text-white bg-[#682a2d] py-[10px] rounded-[4px] px-[32px]">
+              {/* Submit Button */}
+              <button className="text-center flex justify-center mt-4 mx-auto text-white bg-[#682a2d] py-2 rounded-[4px] px-6 text-sm md:text-base">
                 SUBMIT
               </button>
             </div>
           </div>
+          {/* Close Button */}
           <span
-            className="absolute top-[-25px] right-[0px] text-black text-[45px] cursor-pointer hover:text-[red]"
+            className="absolute top-2 right-2 text-black text-2xl md:text-[45px] cursor-pointer hover:text-red-500"
             onClick={() => setisopen(false)}
           >
-            x
+            ×
           </span>
         </div>
       ) : (
@@ -166,7 +176,7 @@ export default function Residentia() {
       )}
       <ResidentiaCommon />
       <section className="w-[100%] bg-[#32343b] mt-[70px]">
-        <div className="max-w-[90%] mx-auto grid grid-cols-[55%_auto] py-[50px] gap-10">
+        <div className="max-w-[90%] mx-auto grid md:grid-cols-[55%_auto] grid-cols-1 py-[50px] gap-10">
           <div className="">
             <h2 className="text-[35px] text-[#be8553] font-bold">
               Master Plan
@@ -208,69 +218,79 @@ export function ResidentiaCommon() {
   return (
     <>
       {isopen == true ? (
-        <div className="fixed w-[78%] h-[78%] border-[1px] border-[solid] border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px]">
-          <div className="grid grid-cols-2 justify-between gap-10">
+        <div className="fixed w-[90%] md:w-[78%] h-auto md:h-[78%] border-[1px] border-[solid] border-[grey] duration-500 z-[9999] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-[4px] p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Image Section */}
             <div>
               <img
                 src="https://ashapurna.com/images/sections/modal-bg.jpg"
-                className="h-full max-w-full object-cover	"
+                className="w-full h-auto max-h-[300px] md:max-h-full object-cover rounded-[4px]"
                 alt=""
               />
             </div>
 
+            {/* Form Section */}
             <div>
-              <h2 className="text-[black] py-[10px] text-[25px] font-light">
+              <h2 className="text-[black] py-2 text-lg md:text-[25px] font-light">
                 Download Brochure
               </h2>
-              <p>
+              <p className="text-sm md:text-base mb-4">
                 Feel free to connect with us. We will contact with you shortly.
               </p>
-              <form>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] mb-[15px]"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] mb-[15px]"
-                />
+              <form className="space-y-4">
+                {/* Name and Email Inputs */}
+                <div className="flex flex-col md:flex-row gap-2">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="border-[1px] border-[solid] border-[black] rounded-[4px] w-full md:w-[48%] h-[50px] px-2"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="border-[1px] border-[solid] border-[black] rounded-[4px] w-full md:w-[48%] h-[50px] px-2"
+                  />
+                </div>
+                {/* Phone Input */}
                 <input
                   type="tel"
                   placeholder="Phone"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px]"
+                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-full h-[50px] px-2"
                 />
-                <div className=" border-[1px] border-[solid] border-[black] rounded-[4px] w-[48%] mx-1 h-[50px] relative mb-5 inline-block">
-                  <select name="enqProperty" required="">
+                {/* Select Dropdown */}
+                <div className="border-[1px] border-[solid] border-[black] rounded-[4px] w-full h-[50px] px-2 relative">
+                  <select
+                    name="enqProperty"
+                    required=""
+                    className="w-full h-full bg-transparent"
+                  >
                     <option value="Ashapurna Mohan Bagh">
                       Ashapurna Mohan Bagh
                     </option>
                   </select>
-                  <label className=" flex items-center gap-2absolute top-[-20px] left-0">
-                    {" "}
-                    Select Property
-                  </label>
                 </div>
+                {/* Textarea */}
                 <textarea
                   name=""
                   placeholder="Explain your query"
                   id=""
                   cols="30"
                   rows="5"
-                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-[98%] mx-1"
+                  className="border-[1px] border-[solid] border-[black] rounded-[4px] w-full h-auto px-2"
                 ></textarea>
               </form>
-              <button className=" text-center flex justify-center my-3 mx-auto text-white bg-[#682a2d] py-[10px] rounded-[4px] px-[32px]">
+              {/* Submit Button */}
+              <button className="text-center flex justify-center mt-4 mx-auto text-white bg-[#682a2d] py-2 rounded-[4px] px-6 text-sm md:text-base">
                 SUBMIT
               </button>
             </div>
           </div>
+          {/* Close Button */}
           <span
-            className="absolute top-[-25px] right-[0px] text-black text-[45px] cursor-pointer hover:text-[red]"
+            className="absolute top-2 right-2 text-black text-2xl md:text-[45px] cursor-pointer hover:text-[red]"
             onClick={() => setisopen(false)}
           >
-            x
+            ×
           </span>
         </div>
       ) : (
