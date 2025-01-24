@@ -200,6 +200,8 @@ export default function Residentia() {
         </div>
       </section>
       <FloorPlan />
+
+      <Construction />
     </>
   )
 }
@@ -551,9 +553,36 @@ export function FloorPlan() {
       heading: "LA MENOR CASA (20X40)",
     },
   ]
+
+  const locations = [
+    {
+      image:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/location_advantage/airport-1699704719.svg",
+      name: "Airport",
+      distance: "7.0 KM",
+    },
+    {
+      image:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/location_advantage/railway_station-1699704719.svg",
+      name: "Raikabagh Junction",
+      distance: "11.0 KM",
+    },
+    {
+      image:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/location_advantage/schoola8fc2d80-f894-4e1f-b679-88d0a7f95d16-1668424039-1700051358.svg",
+      name: "Bodhi International School",
+      distance: "3.5 KM",
+    },
+    {
+      image:
+        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/location_advantage/high_court-1699704856.svg",
+      name: "High Court",
+      distance: "12.0 KM",
+    },
+  ]
   return (
     <>
-      <section className="bg-[#f4efeb]">
+      <section className="bg-[#f4efeb] relative pb-[200px]">
         <h1 className="text-center font-bold text-[35px] py-[15px]">
           Floor Plan
         </h1>
@@ -602,7 +631,72 @@ export function FloorPlan() {
             </div>
           </div>
         </div>
+        {/* Nearby Landmarks start */}
+        <div className="w-[85%] mx-auto bg-[#fdfdfe] shadow-2xl md:h-[300px] h-auto absolute top-[90%] left-[50%] translate-x-[-50%]">
+          <h2 className="font-bold text-center text-[35px] py-[25px] text-[#0a3346]">
+            Nearby Landmarks
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center items-center">
+            {locations.map((v, i) => (
+              <div key={i} className="text-center">
+                <img
+                  src={v.image}
+                  alt={v.name}
+                  className="w-[50px] h-[50px] mx-auto"
+                />
+                <h5 className="py-2">{v.name}</h5>
+                <p className="text-[#be8654] font-bold">{v.distance}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Nearby Landmarks End */}
       </section>
+      {/*       <Construction  start */}
+
+      <section></section>
+      {/*       <Construction  End */}
     </>
   )
 }
+// Construction Update section start
+
+function Construction() {
+  const [ConstructionUpdate, setConstructionUpdate] = useState(0)
+  let Buttontabs = [
+    "December 2024",
+    "Novemeber 2024",
+    "October 2024",
+    "September 2024",
+    "August 2024",
+    "July 2024",
+  ]
+  console.log(Buttontabs)
+
+  return (
+    <>
+      <section className="w-[100%] bg-[#ffffff] mt-[300px] text-center">
+        <h1 className="text-[35px] font-[500]">Construction Update</h1>
+      </section>
+      <div className="my-[30px] max-w-[80%] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        {Buttontabs.map((tab, index) => (
+          <button
+            key={index}
+            className="table text-center py-4 px-4 border-[1px] border-[solid]   cursor-pointer hover:border-[black] rounded-md"
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+      <div className="grid grid-cols-4 gap-5">
+<div>
+
+  
+</div>
+
+      </div>
+    </>
+  )
+}
+
+// Construction Update section End
