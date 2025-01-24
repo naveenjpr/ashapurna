@@ -528,27 +528,27 @@ export function FloorPlan() {
   ]
   let tabscontent = [
     {
-      firstImg:
+      decemberImg:
         "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_30x60-1700303299.jpg",
       heading: "LA CASTLE (30X60)",
     },
     {
-      firstImg:
+      decemberImg:
         "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_25x50-1700303299.jpg",
       heading: "LA GRAND MANSION (25X50)",
     },
     {
-      firstImg:
+      decemberImg:
         "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_25x45-1700303300.jpg",
       heading: "LA MENOR MANSION (25X45)",
     },
     {
-      firstImg:
+      decemberImg:
         "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/floor_plan/img_20x45-1700303300.jpg",
       heading: "LA GRAND CASA (20X45)",
     },
     {
-      firstImg:
+      decemberImg:
         "https://ashapurna.com/images/projects-banners/heritage/852-780.jpg",
       heading: "LA MENOR CASA (20X40)",
     },
@@ -580,6 +580,7 @@ export function FloorPlan() {
       distance: "12.0 KM",
     },
   ]
+
   return (
     <>
       <section className="bg-[#f4efeb] relative pb-[200px]">
@@ -609,7 +610,7 @@ export function FloorPlan() {
                 style={{ display: activTab === index ? "block" : "none" }}
               >
                 <img
-                  src={img.firstImg}
+                  src={img.decemberImg}
                   alt={`Floor plan ${tabs[index]}`}
                   className="w-full max-h-[400px] object-cover"
                 />
@@ -662,39 +663,99 @@ export function FloorPlan() {
 // Construction Update section start
 
 function Construction() {
-  const [ConstructionUpdate, setConstructionUpdate] = useState(0)
-  let Buttontabs = [
+  const [ConstructionUpdate, setConstructionUpdate] = useState(0) // Default to the first tab
+  const Buttontabs = [
     "December 2024",
-    "Novemeber 2024",
+    "November 2024",
     "October 2024",
     "September 2024",
     "August 2024",
     "July 2024",
   ]
-  console.log(Buttontabs)
+  const construction = {
+    December: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_04-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_03-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_02-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_01-1735384595.jpg",
+    ],
+    November: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_nov_04-1732865202.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_nov_03-1732865202.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_nov_02-1732865202.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_nov_01-1732865202.jpg",
+    ],
+    October: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_oct_01-1730203170.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_oct_04-1730203170.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_oct_02-1730203170.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_oct_02-1730203170.jpg",
+    ],
+    September: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_04-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_04-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_04-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_04-1735384596.jpg",
+    ],
+    August: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_02-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_02-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_02-1735384596.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_dec_02-1735384596.jpg",
+    ],
+    July: [
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_july_01-min-1721998758.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_july_04-min-1721998758.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_july_03-min-1721998758.jpg",
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/construction/mb_cuw_july_03-min-1721998758.jpg",
+      
+    ],
+  }
+
+  const currentMonth = Buttontabs[ConstructionUpdate].split(" ")[0] // Extract month from tab
 
   return (
     <>
-      <section className="w-[100%] bg-[#ffffff] mt-[300px] text-center">
-        <h1 className="text-[35px] font-[500]">Construction Update</h1>
+      <section className="w-full bg-white md:mt-[230px] sm:mt-[270px] mt-[400px] text-center">
+        <h1 className="text-3xl font-semibold py-[10px]">Construction Update</h1>
       </section>
-      <div className="my-[30px] max-w-[80%] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+      {/* Tabs */}
+      <div className="my-8 max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
         {Buttontabs.map((tab, index) => (
           <button
             key={index}
-            className="table text-center py-4 px-4 border-[1px] border-[solid]   cursor-pointer hover:border-[black] rounded-md"
+            className={`text-center py-3 px-4 border border-solid cursor-pointer hover:border-black rounded-md transition-all ${
+              ConstructionUpdate === index
+                ? "text-[#ca9d75] border-[#ca9d75]"
+                : ""
+            }`}
+            onClick={() => setConstructionUpdate(index)}
           >
             {tab}
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-4 gap-5">
-<div>
-
-  
+      {/* Images */}
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 px-4">
+  {construction[currentMonth]?.map((img, i) => (
+    <div
+      key={i}
+      className="relative group w-full h-[150px] border border-brown-500"
+    >
+      <img src={img} alt="" className="w-full h-full object-cover" />
+      {/* Black Overlay */}
+      <div className="w-full h-full bg-black opacity-20 absolute top-0 transition-opacity"></div>
+      {/* White Hover Overlay */}
+      <div className="w-full h-full bg-white opacity-0 group-hover:opacity-80 absolute top-0 transition-opacity duration-300 ease-in-out">
+        {/* Centered Button */}
+        <button className="px-8 py-2 bg-[#be8553] text-white font-semibold rounded-md transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          View
+        </button>
+      </div>
+    </div>
+  ))}
 </div>
 
-      </div>
     </>
   )
 }
