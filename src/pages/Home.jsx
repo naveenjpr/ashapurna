@@ -8,6 +8,7 @@ import Homeabout from "./Homeabout"
 import MediaandEventSlider from "../SliderFolder/MediaandEvent.slider"
 import FeaturedProjectsSlider from "../SliderFolder/FeaturedProjects"
 import Card from "../SliderFolder/Card"
+import Footer from "../common/Footer"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ThirdSlider />
       <Fourslider />
       <MediaandEventSlider />
+      <Footer />
     </>
   )
 }
