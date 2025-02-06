@@ -5,6 +5,8 @@ import { FaLocationDot } from "react-icons/fa6"
 import { IoHomeSharp } from "react-icons/io5"
 import lightdots from "../Images/light-dots-bg.png"
 import backimg from "../Images/whyashapurna-bg.webp"
+import { Link } from "react-router-dom"
+import { properties } from "../AllsliderData/slider"
 
 export default function ThirdSlider() {
   return (
@@ -40,82 +42,9 @@ export default function ThirdSlider() {
   )
 }
 function MyThirdslider() {
-  // var settings3 = {
-  //   dots: true,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   initialSlide: 0,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 3,
-  //         infinite: true,
-  //         dots: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2,
-  //         initialSlide: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 480,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //   ],
-  // }
+  
 
-  const properties = [
-    {
-      id: 1,
-      name: "Ashapurna Anmol I, II, III",
-      location: "Near New High Court, Jodhpur",
-      availability: "Few Units Left",
-      logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-anmol-budget-villas-in-jodhpur-logo-1677495339.webp",
-      image:
-        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/premium-budget-villas-in-jodhpur-1681994380.webp", // Replace with actual image path
-    },
-    {
-      id: 2,
-      name: "Ashapurna Nanomax II",
-      location: "Jodhpur, Rajasthan 342015, India",
-      availability: "Few Units Left",
-      logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-anmol-budget-villas-in-jodhpur-logo-1677495339.webp",
 
-      image:
-        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/nanomax-project-thumbnail-1681986809.webp", // Replace with actual image path
-    },
-    {
-      id: 3,
-      name: "Ashapurna Anmol I, II, III",
-      location: "Near New High Court, Jodhpur",
-      availability: "Few Units Left",
-      logo: "hhttps://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-anmol-budget-villas-in-jodhpur-logo-1677495339.webp",
-
-      image:
-        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/premium-budget-villas-in-jodhpur-1681994380.webp", // Replace with actual image path
-    },
-    {
-      id: 4,
-      name: "Ashapurna Anmol I, II, III",
-      location: "Near New High Court, Jodhpur",
-      availability: "Few Units Left",
-      logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-nanomax-ii-logo-1677494586.webp",
-
-      image:
-        "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/nanomax-project-thumbnail-1681986809.webp", // Replace with actual image path
-    },
-  ]
 
   return (
     // <Slider {...settings3}>
@@ -150,9 +79,17 @@ function MyThirdslider() {
                     <IoHomeSharp className="mx-[10px]" />
                     <p> {v.availability}</p>
                   </div>
-                  <button className="bg-[#062f43] text-white md:px-[10px] px-[5px] py-[2px] md:py-[5px] md:text-[10px] text-[7px]">
+
+                  {/* <button className="bg-[#062f43] text-white md:px-[10px] px-[5px] py-[2px] md:py-[5px] md:text-[10px] text-[7px]">
+                    See All {`/residentia/${v.name}`}
+                  </button> */}
+
+                  <Link
+                    to={`/residentis/${v.link}`}
+                    className="bg-[#062f43] text-white md:px-[10px] px-[5px] py-[2px] md:py-[5px] md:text-[10px] text-[7px] rounded-md"
+                  >
                     See All
-                  </button>
+                  </Link>
                 </div>
               </div>
             </figure>

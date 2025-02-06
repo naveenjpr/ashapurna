@@ -731,3 +731,48 @@ export const amenities = [
     icon: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/amenity/1-1714654032.png",
   },
 ]
+export let  properties = [
+  {
+    id: 1,
+    name: "Ashapurna Anmol I, II, III",
+    link: "Ashapurna-Anmol-I-II-III",
+    location: "Near New High Court, Jodhpur",
+    availability: "Few Units Left",
+    logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-anmol-budget-villas-in-jodhpur-logo-1677495339.webp",
+    image:
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/premium-budget-villas-in-jodhpur-1681994380.webp", // Replace with actual image path
+  },
+  {
+    id: 2,
+    name: "Ashapurna Nanomax II",
+    link: "Ashapurna-Nanomax-II",
+    location: "Jodhpur, Rajasthan 342015, India",
+    availability: "Few Units Left",
+    logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-anmol-budget-villas-in-jodhpur-logo-1677495339.webp",
+
+    image:
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/nanomax-project-thumbnail-1681986809.webp", // Replace with actual image path
+  },
+  {
+    id: 3,
+    name: "Ashapurna Anmol I, II, III",
+    link: "Ashapurna-Anmol-I-II-III",
+    location: "Near New High Court, Jodhpur",
+    availability: "Few Units Left",
+    logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-nanomax-ii-logo-1677494586.webp",
+
+    image:
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/premium-budget-villas-in-jodhpur-1681994380.webp", // Replace with actual image path
+  },
+  {
+    id: 4,
+    name: "Ashapurna Anmol I, II, III",
+    link: "Ashapurna-Anmol-I-II-III",
+    location: "Near New High Court, Jodhpur",
+    availability: "Few Units Left",
+    logo: "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/ashapurna-nanomax-ii-logo-1677494586.webp",
+
+    image:
+      "https://d3qnldyv492i08.cloudfront.net/ashapurna/images/projects/nanomax-project-thumbnail-1681986809.webp", // Replace with actual image path
+  },
+]
